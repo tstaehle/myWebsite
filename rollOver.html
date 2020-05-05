@@ -1,0 +1,60 @@
+<html>
+<head>
+
+</head>
+<body bgcolor = "Red">
+<font face="Times New Roman" color="Grey">
+
+<center>
+<h1> Check This Out</h1>
+
+</center>
+Roll Over the Photo
+
+
+</font>
+</body>
+</html>
+ <script>
+  
+    function rollIn(daImage)
+    {
+	daImage.src="images/roll2.jpg";
+    }
+   
+    function rollOut(daImage)
+{
+	daImage.src="images/roll1.jpg";
+}
+
+  
+</script>
+<body>
+<center>
+<br/> <br/> <br/> <br/>   
+<img src="images/roll1.jpg" width = 800 onmouseout="rollOut(this)" onmouseover="rollIn(this)"/>
+<p>Click here to <a href="index.html">read an article about Padre Football. </a>
+<br/><br/>
+<br/><br/>
+<form name="fm1">
+    <div id=userName style="visibility:hidden; width='60'">
+        <input type="text" name="question" size="40"/>
+    </div>
+    <br/><br/>
+    <input type="button" value="Welcome" onClick="greeting()"/>
+     <p>Click here to <a href="greeting.html">return to my home page. </a>
+<br/><br/>
+<br/><br/>
+<form name="fm1">
+    <div id=userName style="visibility:hidden; width='60'">
+        <input type="text" name="question" size="40"/>
+    </div>
+    <br/><br/>
+    <input type="button" value="Welcome" onClick="greeting()"/>
+</form>
+</center>
+</body>
+
+</form>  
+</center>
+</body>
