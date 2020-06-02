@@ -1,0 +1,55 @@
+<html>
+<head>
+<script language="JavaScript">
+var direction
+var timer;
+
+function start()
+{
+    document.onkeydown=keyListener;
+}
+    
+function keyListener()
+{
+	//alert(window.event.keyCode);
+    var leftPos
+    if(window.event.keyCode > 0)// Tests if any key has been pressed
+ { leftPos = document.all.dude.style.left; 
+   leftPos = parseInt(leftPos);
+ }
+
+    //Tests if left arrow key is pressed
+      if(window.event.keyCode == 37)
+  {                             document.getElementById('dude').innerHTML='<img    src="images/dudeLF.gif" width="100">';
+    direction = 180;
+   leftPos = leftPos - 10;
+   document.all.dude.style.left = leftPos;
+  }
+  //Test if Right arrow key is pressed
+    if(window.event.keyCode == 39)
+  {
+    document.getElementById('dude').innerHTML='<img src="images/dudeRT.gif" width="100">';
+    direction = 0;
+      leftPos = leftPos + 10;
+   document.all.dude.style.left = leftPos;
+  }
+
+}
+    
+    
+</script>
+</head>
+<body bgcolor="#99CCFF" >
+
+<center>
+	<h1> KeyListener </h1>
+	<input type="button" value="Click" onClick="start()"/>
+</center>
+
+<div id="dude" style="position:absolute; left:100; top:150;">
+	<img src="images/dudeRT.gif" width="100"/>
+</div>
+
+</body>
+</html>
+
