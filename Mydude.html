@@ -1,0 +1,73 @@
+<html>
+<head>
+
+    
+<br/><br/>
+<script language="JavaScript">
+var direction
+var timer;
+
+function start()
+{
+
+  document.onkeydown=keyListener; 
+}
+
+function keyListener()
+{
+var leftPos
+ if(window.event.keyCode > 0)// Tests if any key has been pressed
+ { leftPos = document.all.dude.style.left;
+   leftPos = parseInt(leftPos);
+ }
+
+     //testing if left arrow key is pressed
+  if(window.event.keyCode == 37)
+  {
+    document.getElementById('dude').innerHTML='<img src="images/dudeLF.gif" width="100">';
+    direction = 180;
+     leftPos = leftPos - 10;
+   document.all.dude.style.left = leftPos;
+  }
+if(window.event.keyCode == 39)
+  {
+    document.getElementById('dude').innerHTML='<img src="images/dudeRT.gif" width="100">';
+    direction = 0;
+    leftPos = leftPos + 10;
+    document.all.dude.style.left = leftPos;
+  }
+}
+
+</script>
+</head>
+<body bgcolor="#003580" >
+
+<center>
+<h1> Running Man </h1>
+<input type="button" value="Click" onClick="start()"/>
+</center>
+
+<div id="bkgnd" style="position:absolute; left:190; top:160;">
+<img src="images/background.jpg" width="1000"/>
+</div>
+
+
+<div id="left" style="position:absolute; left:0; top:160;">
+<img src="images/color.jpg" width="190"
+    height ="654"/>
+</div>
+
+<div id="right" style="position:absolute; left:1190; top:160;">
+<img src="images/color.jpg" width="130" height ="654"/>
+</div>
+
+
+<div id="dude" style="position:absolute; left:200; top:620;">
+<img src="images/dudeRT.gif" width="100"/>
+
+
+
+</div>
+
+</body>
+</html>
