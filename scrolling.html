@@ -1,0 +1,120 @@
+<html>
+<head> 
+<script language = "JavaScript">
+
+var direction;
+var timer;
+var left1, left2, left3;
+
+function begin()
+{
+	document.onkeydown=keyListener;
+}
+    function keyListener()
+{
+    if(window.event.keyCode > 0)// Tests if any key has been pressed
+    { 
+        left1 = document.all.bkgnd1.style.left; 
+        left1 = parseInt(left1);
+		left2 = document.all.bkgnd2.style.left; 
+        left2 = parseInt(left2);
+        left3 = document.all.bkgnd3.style.left; 
+        left3 = parseInt(left3);
+    }
+      //Tests if "A" key is pressed
+    if(window.event.keyCode == 65)
+    {
+        direction = 180
+        document.getElementById('dude').innerHTML='<img src="images/dudeLF.gif" width="100">';
+        left1 = left1 + 7; // adds 7 to the current value of left1, 2, & 3.
+	    left2 = left2 + 7;
+	    left3 = left3 + 7;
+
+
+      
+    }
+    //Test if "D" key is pressed
+    if(window.event.keyCode == 68)
+{
+	document.getElementById('dude').innerHTML='<img src="images/dudeRT.gif" width="100">';
+     direction = 0;
+    
+    left1 = left1 - 7;
+	left2 = left2 - 7;
+	left3 = left3 - 7;
+
+}
+    reposition();
+
+    document.all.bkgnd1.style.left = left1;
+    document.all.bkgnd2.style.left = left2;
+    document.all.bkgnd3.style.left = left3;
+
+    
+    
+
+    
+
+}
+    function reposition()
+{
+     if(left1<-900) // 1st background is completely off the left edge of the screen.
+    {
+        left1 = left3+900;
+    }
+    if(left2<-900) // 2nd background is completely off the left edge of the screen.
+    {
+        left2 = left1+900;
+    }
+    if(left3<-900) // 3rd background is completely off the left edge of the screen.
+    {
+        left3 = left2+900;
+    } if(left1>1800) // 1st background is completely off the right edge of the screen.
+    {
+        left1 = left2-900;
+    }
+    if(left2>1800) // 2nd background is completely off the right edge of the screen.
+    {
+        left2 = left3-900;
+    }
+    if(left3>1800) // 3rd background is completely off the right edge of the screen.
+    {
+        left3 = left1-900;
+    }
+
+
+
+}
+
+
+
+</script>
+</head>
+<body>
+<center>
+<h1> SideScroller </h1>
+<input type="button" value="Start" onclick="begin()"
+</center>
+
+<div id=bkgnd1 style="position:absolute; top:100; left:-900">
+	<img src="images/scrollBkgnd.png">
+</div>
+
+<div id=bkgnd2 style="position:absolute; top:100; left:0">
+	<img src="images/scrollBkgnd.png">
+</div>
+
+</div>
+
+<div id=bkgnd3 style="position:absolute; top:100; left:900">
+	<img src="images/scrollBkgnd.png">
+</div>
+    
+    <div id="dude" style="position:absolute; left:350; top:450;">
+	<img src="images/dudeRT.gif" width="100"/>
+</div>
+
+
+
+</body>
+</html>
